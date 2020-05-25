@@ -1,11 +1,23 @@
 import React from 'react';
 import './App.css';
+import TaskList from './component/TaskList';
+import TaskListContextProvider from './context/TaskListContext';
+import TaskForm from './component/TaskForm';
+import Header from './component/Header';
 
 function App() {
   return (
-    <div>
-      Hello world
-    </div>
+    <TaskListContextProvider>
+      <div className="container">
+        <div className="app-wrapper">
+          <div className="main">
+            <Header />
+            <TaskForm />
+            <TaskList />
+          </div>
+        </div>
+      </div>
+    </TaskListContextProvider>
   );
 }
 
